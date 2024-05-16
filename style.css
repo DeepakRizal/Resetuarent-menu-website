@@ -1,0 +1,238 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Poetsen+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px;
+  background-color: #2c3e50;
+  height: 50px;
+}
+header > h1 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  color: #ffffff; /* Text color for the logo */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Optional text shadow */
+}
+
+nav ul {
+  display: flex;
+  list-style-type: none;
+  gap: 50px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+nav ul li > a {
+  text-decoration: none;
+  color: white;
+  font-size: 13px;
+}
+
+nav ul li > a:hover {
+  color: gray;
+  font-size: 16px;
+}
+
+.categories {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 25px 50px;
+  background-color: gray;
+}
+
+#appetizers,
+#main-courses,
+#desserts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#appetizers > h2,
+#main-courses > h2,
+#desserts > h2 {
+  font-family: "Poetsen One", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  margin-bottom: 20px;
+  text-align: center;
+  color: rgb(27, 23, 23);
+}
+
+.appetizers-items,
+.main-courses-items,
+.desserts-items {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-left: 60px;
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  background-color: #f9f9f9; /* Light gray background color */
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.menu-item .cover-img > img {
+  height: 150px;
+  width: 100%;
+  object-fit: cover cover;
+  border-radius: 10px 10px 0 0;
+}
+
+.menu-item .item-info {
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.menu-item:hover {
+  transform: translateY(-5px);
+}
+
+.menu-item h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #333;
+  font-weight: bold;
+}
+
+.menu-item p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #666;
+}
+.price {
+  text-align: end;
+}
+
+/* Hamburger icon styling */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  justify-content: center;
+}
+
+.hamburger span {
+  height: 3px;
+  width: 25px;
+  background-color: white;
+  margin: 3px 0;
+  transition: 0.4s;
+}
+
+/* Updated styles for the dropdown menu */
+.nav-dropdown {
+  display: none;
+  position: absolute;
+  top: 70px; /* Adjust the top position as needed */
+  left: 0;
+  width: 100%;
+  background-color: #000;
+  z-index: 1000; /* Ensure the dropdown appears above other elements */
+}
+
+.nav-dropdown.show {
+  display: block;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center; /* Center the navigation links horizontally */
+  padding: 10px 0;
+}
+
+.nav-links li {
+  margin: 0 20px; /* Adjust the spacing between links as needed */
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Media query for mobile responsiveness */
+
+/* Responsive styles */
+@media (max-width: 868px) {
+  header {
+    padding: 10px 20px;
+  }
+  nav {
+    display: flex;
+    align-items: center;
+  }
+
+  nav ul {
+    gap: 10px;
+  }
+  .desk-nav-links {
+    display: none;
+  }
+
+  nav ul li {
+    text-align: center;
+    padding: 15px 0;
+    margin: 0;
+  }
+  .nav-dropdown {
+    top: 70px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center; /* Center the navigation links vertically */
+  }
+
+  .nav-links li {
+    margin: 5px 0; /* Adjust the spacing between links in mobile view */
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .appetizers-items,
+  .main-courses-items,
+  .desserts-items {
+    justify-content: center;
+    margin-left: 0;
+  }
+}
+
+@media (min-width: 868px) {
+  .nav-links {
+    display: none;
+  }
+}
+
+@media (min-width: 912px) and (max-width: 1000px) {
+  .appetizers-items,
+  .main-courses-items,
+  .desserts-items {
+    margin-left: 150px;
+  }
+}
